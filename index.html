@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Sajeel Muhammed — IT Support Engineer, Technical Support Engineer and Desktop Support Engineer with L1/L2 support, Microsoft 365, Active Directory, networking and endpoint security experience." />
+  <meta property="og:title" content="Sajeel Muhammed | IT Support Engineer" />
+  <meta property="og:description" content="L1/L2 IT Support · Microsoft 365 · Active Directory · Networking" />
+  <title>Sajeel Muhammed | IT Support Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07111f;
+      --panel:#0c1a2d;
+      --panel2:#101f36;
+      --text:#f6f8fb;
+      --muted:#9aabc2;
+      --line:rgba(255,255,255,.10);
+      --accent:#65e6d1;
+      --accent2:#6da8ff;
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 15%,rgba(101,230,209,.09),transparent 30%),
+        radial-gradient(circle at 85% 20%,rgba(109,168,255,.10),transparent 32%),
+        linear-gradient(180deg,#06101d 0%,#081523 50%,#07111f 100%);
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;opacity:.22;z-index:-2;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 78%);
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1180px,92vw);margin:auto}
+    .nav{
+      position:fixed;top:16px;left:50%;transform:translateX(-50%);
+      width:min(1180px,92vw);z-index:50;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 16px;border:1px solid var(--line);
+      background:rgba(7,17,31,.72);backdrop-filter:blur(18px);
+      border-radius:18px;box-shadow:0 12px 38px rgba(0,0,0,.16)
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700}
+    .brand-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 24px var(--accent)}
+    .navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}
+    .navlinks a:hover{color:var(--text)}
+    .mini-btn{padding:9px 13px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:70px;padding:125px 0 70px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:13px;color:#c7d3e5}
+    .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent)}
+    h1{font-family:"Space Grotesk";font-size:clamp(54px,7.2vw,92px);line-height:.94;letter-spacing:-.055em;margin:23px 0 22px}
+    .gradient-text{background:linear-gradient(90deg,#fff 0%,#bfeeff 38%,#65e6d1 78%,#8eb9ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{max-width:720px;color:var(--muted);font-size:18px;line-height:1.8}
+    .typing{color:var(--accent);font-weight:700}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:14px;border:1px solid var(--line);font-weight:700;transition:.25s ease}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#8fe9ff);color:#05111a;border:none}
+    .btn:hover{transform:translateY(-2px)}
+    .statline{display:flex;gap:28px;flex-wrap:wrap;margin-top:38px}
+    .stat strong{display:block;font-size:20px}.stat span{font-size:13px;color:var(--muted)}
+    .portrait-wrap{position:relative;display:grid;place-items:center;min-height:560px}
+    .orbit,.orbit2{position:absolute;border:1px solid rgba(101,230,209,.26);border-radius:50%;animation:spin 18s linear infinite}
+    .orbit{width:440px;height:440px}.orbit2{width:510px;height:510px;animation-direction:reverse;animation-duration:24s;border-color:rgba(109,168,255,.20)}
+    .orbit::before,.orbit2::before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent);top:-6px;left:50%}
+    .portrait-card{
+      width:min(420px,82vw);aspect-ratio:4/5;border-radius:36px;overflow:hidden;
+      position:relative;box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.18);
+      animation:float 5s ease-in-out infinite;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(101,230,209,.12), transparent 35%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        #0e1a2b;
+      display:grid;place-items:end center;
+    }
+    .portrait-card img{
+      width:100%;height:100%;object-fit:contain;object-position:center bottom;
+      filter:saturate(.98) contrast(1.02) drop-shadow(0 18px 40px rgba(0,0,0,.30));
+      padding-top:10px; padding-left:8px; padding-right:8px;
+    }
+    .portrait-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,17,31,.58),transparent 50%)}
+    .photo-badge{position:absolute;z-index:4;right:-20px;bottom:54px;padding:13px 15px;border:1px solid var(--line);border-radius:16px;background:rgba(8,21,35,.82);backdrop-filter:blur(16px);box-shadow:var(--shadow);font-size:13px}
+    .photo-badge b{display:block;color:var(--accent);margin-bottom:3px}
+    section{padding:96px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+    .kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:800}
+    h2{font-family:"Space Grotesk";font-size:clamp(34px,5vw,54px);letter-spacing:-.035em;margin:10px 0 0}
+    .section-head p{max-width:580px;color:var(--muted);line-height:1.7}
+    .grid{display:grid;gap:18px}
+    .about-grid{grid-template-columns:1.1fr .9fr}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.028));border-radius:var(--radius);padding:26px;box-shadow:0 14px 44px rgba(0,0,0,.12);transition:.25s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(101,230,209,.32)}
+    .card p{color:var(--muted);line-height:1.8}
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .chip{padding:9px 12px;border:1px solid var(--line);border-radius:999px;color:#c9d8eb;font-size:13px;background:rgba(255,255,255,.025)}
+    .skill-grid{grid-template-columns:repeat(3,1fr)}
+    .iconbox{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(101,230,209,.09);border:1px solid rgba(101,230,209,.18);font-size:20px}
+    .skill-card h3,.project h3{margin:18px 0 9px}
+    .timeline{position:relative;padding-left:24px}
+    .timeline::before{content:"";position:absolute;left:6px;top:10px;bottom:0;width:1px;background:linear-gradient(var(--accent),rgba(255,255,255,.08))}
+    .job{position:relative;padding:0 0 30px 28px}
+    .job::before{content:"";position:absolute;left:-23px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px rgba(101,230,209,.8)}
+    .job small{color:var(--accent)} .job h3{margin:6px 0}.job p{margin:4px 0;color:var(--muted);line-height:1.7}
+    .project-grid{grid-template-columns:repeat(2,1fr)}
+    .project{position:relative;overflow:hidden;min-height:260px}
+    .project::before{content:"";position:absolute;inset:auto -40px -80px auto;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(101,230,209,.23),transparent 65%)}
+    .project .num{font-family:"Space Grotesk";font-size:54px;color:rgba(255,255,255,.12)}
+    .edu{display:grid;grid-template-columns:.7fr 1.3fr;gap:18px}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .contact a.linkrow{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);color:#d9e6f6}
+    footer{padding:34px 0 50px;color:var(--muted);border-top:1px solid var(--line);font-size:13px}
+    .reveal{opacity:0;transform:translateY(24px);transition:.75s ease}
+    .reveal.show{opacity:1;transform:none}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1deg)}}
+    @media(max-width:900px){
+      .navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:120px;gap:28px}.portrait-wrap{min-height:500px}
+      .about-grid,.skill-grid,.project-grid,.edu,.contact{grid-template-columns:1fr}
+      .orbit{width:360px;height:360px}.orbit2{width:420px;height:420px}
+      .section-head{display:block}.section-head p{margin-top:14px}
+    }
+    @media(max-width:560px){
+      h1{font-size:52px}.lead{font-size:16px}.portrait-wrap{min-height:430px}.portrait-card{width:290px}
+      .orbit{width:300px;height:300px}.orbit2{width:350px;height:350px}.photo-badge{right:2px}
+    }
+
+    /* ---------- Enter gate ---------- */
+    body.locked{overflow:hidden}
+    .gate{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+      padding:24px;text-align:center;background:#06101d;transition:opacity .6s ease,visibility .6s ease}
+    .gate.hide{opacity:0;visibility:hidden;pointer-events:none}
+    .gate .g-name{font-family:"Space Grotesk",system-ui,sans-serif;font-size:clamp(30px,8vw,52px);font-weight:700;letter-spacing:-.04em}
+    .gate .g-role{color:var(--muted);font-size:15px;margin-top:-10px}
+    .gate button{display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;color:#06111d;
+      font:700 16px Inter,system-ui,sans-serif;padding:16px 26px;border-radius:16px;
+      background:linear-gradient(135deg,#65e6d1,#8fe9ff);box-shadow:0 0 0 0 rgba(101,230,209,.5);animation:pulse 2s infinite}
+    .gate button:active{transform:scale(.97)}
+    @keyframes pulse{70%{box-shadow:0 0 0 16px rgba(101,230,209,0)}100%{box-shadow:0 0 0 0 rgba(101,230,209,0)}}
+    .mini-btn{cursor:pointer;color:inherit;font:inherit}
+    .portrait-tilt{will-change:transform}
+    /* ---------- Mobile performance ---------- */
+    @media(max-width:900px){
+      .hero{min-height:100svh}
+      .nav{backdrop-filter:none;background:rgba(7,17,31,.94)}
+      body::before{display:none}
+      .orbit,.orbit2{animation:none}
+      .portrait-card{animation:none}
+      .card:hover,.btn:hover{transform:none}
+      .reveal{transition-duration:.5s}
+      section{padding:72px 0}
+    }
+    @media(max-width:560px){
+      .nav{padding:10px 12px;top:10px}
+      .nav .lt{display:none}
+      .stat strong{font-size:18px}
+      .statline{gap:20px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body class="locked">
+  <div id="voiceGate" class="gate" role="dialog" aria-label="Enter portfolio">
+    <div class="g-name">Sajeel Muhammed</div>
+    <div class="g-role">IT Support Engineer</div>
+    <button id="voiceGateBtn" type="button">🔊 Enter Portfolio</button>
+  </div>
+  <audio id="introAudio" src="assets/intro.mp3" preload="auto" playsinline></audio>
+<nav class="nav">
+    <a class="brand" href="#home"><span class="brand-dot"></span>Sajeel.</a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Highlights</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button class="mini-btn" id="voiceIntroBtn" type="button" aria-label="Replay intro">🔊<span class="lt"> Replay Intro</span></button>
+      <a class="mini-btn" href="mailto:sajeelmhd22@gmail.com">Let's talk ↗</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <div class="eyebrow"><i></i> Immediate availability · Open to relocate / remote</div>
+        <h1><span class="gradient-text">Sajeel<br>Muhammed</span></h1>
+        <p class="lead">
+          IT Support Engineer focused on <span class="typing" id="typing">L1 / L2 Support</span>.
+          I support users, devices, Microsoft 365, Active Directory, networks and endpoint environments with a practical troubleshooting and service-first approach.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#experience">View experience ↘</a>
+          <a class="btn" target="_blank" href="https://www.linkedin.com/in/sajeelmhd22">LinkedIn ↗</a>
+          <a class="btn" href="mailto:sajeelmhd22@gmail.com">Email me ✉</a>
+        </div>
+        <div class="statline">
+          <div class="stat"><strong>5+ Years</strong><span>IT support experience</span></div>
+          <div class="stat"><strong>100+ Users</strong><span>Enterprise support exposure</span></div>
+          <div class="stat"><strong>15–20 / Day</strong><span>Support tickets handled</span></div>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="orbit"></div><div class="orbit2"></div>
+        <div class="portrait-tilt"><div class="portrait-card"><img src="assets/sajeel-profile.png" alt="Portrait of Sajeel Muhammed" width="420" height="525" decoding="async" fetchpriority="high"></div></div>
+        <div class="photo-badge"><b>IT Support Engineer</b>L1/L2 • Microsoft 365 • AD • Networking</div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">01 / About</div><h2>Reliable support.<br>Structured IT operations.</h2></div>
+          <p>IT Support Engineer with 5+ years of hands-on experience across onsite and remote L1/L2 support, enterprise environments, user access, workstation deployment, Microsoft 365 and day-to-day IT operations.</p>
+        </div>
+        <div class="grid about-grid">
+          <article class="card reveal">
+            <h3>Professional profile</h3>
+            <p>I work across Windows support, Active Directory, Microsoft 365, networking, endpoint security, workstation provisioning and ITSM processes. I focus on resolving incidents efficiently, keeping users productive, and documenting support work clearly.</p>
+            <div class="chips">
+              <span class="chip">Windows 10/11</span><span class="chip">Active Directory</span><span class="chip">Microsoft 365</span>
+              <span class="chip">ITSM</span><span class="chip">Networking</span><span class="chip">Endpoint Security</span>
+            </div>
+          </article>
+          <article class="card reveal">
+            <h3>Support approach</h3>
+            <p>Clear troubleshooting, SLA awareness, secure onboarding/offboarding, practical communication with end users, and dependable follow-through from first response to resolution.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">02 / Expertise</div><h2>Core technical skills</h2></div>
+          <p>Support, systems, cloud productivity, networking, ticketing and endpoint operations aligned with my current IT support experience.</p>
+        </div>
+        <div class="grid skill-grid">
+          <article class="card skill-card reveal"><div class="iconbox">⌁</div><h3>Windows & Desktop Support</h3><p>Windows 10/11, Windows Server 2016/2019, hardware, printers, scanners, OS image deployment and workstation provisioning.</p></article>
+          <article class="card skill-card reveal"><div class="iconbox">◎</div><h3>Active Directory & Access</h3><p>Active Directory, basic Group Policy, user onboarding/offboarding, account provisioning and secure access deprovisioning.</p></article>
+          <article class="card skill-card reveal"><div class="iconbox">☁</div><h3>Microsoft 365</h3><p>Exchange, Outlook, Teams, OneDrive, SharePoint, license management, email setup and user troubleshooting.</p></article>
+          <article class="card skill-card reveal"><div class="iconbox">⌘</div><h3>Networking & Remote Access</h3><p>LAN/WAN, TCP/IP, DNS, DHCP, VPN, Wi-Fi troubleshooting, RDP, TeamViewer and AnyDesk.</p></article>
+          <article class="card skill-card reveal"><div class="iconbox">✓</div><h3>ITSM & Service Delivery</h3><p>ConnectWise, ServiceNow, Jira and Zendesk with incident logging, escalation, SLA adherence and documentation.</p></article>
+          <article class="card skill-card reveal"><div class="iconbox">◈</div><h3>Infrastructure & Security</h3><p>Hyper-V, VMware ESXi, Synology NAS, Veeam, Acronis, SOPHOS firewall, endpoint protection and patch management.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">03 / Experience</div><h2>Professional experience</h2></div>
+          <p>Hands-on IT support across enterprise, multi-client and internal company environments, with additional web development experience.</p>
+        </div>
+        <div class="card reveal">
+          <div class="timeline">
+            <div class="job">
+              <small>April 2025 — Present</small>
+              <h3>IT Administrator · TS Lankan (PVT) LTD</h3>
+              <p>Dehiwala, Sri Lanka · Company-wide IT support, Windows Server, Microsoft 365, Hyper-V, VMware ESXi, Synology NAS, Veeam, Acronis, AVAYA IP Office, SOPHOS firewall and Aruba wireless infrastructure. Handles an average of 15–20 daily support tickets while maintaining SLA compliance.</p>
+            </div>
+            <div class="job">
+              <small>October 2024 — March 2025</small>
+              <h3>Web Developer & IT Support (Trainee) · Alpha Health Group (PVT) LTD</h3>
+              <p>Maruthamunai, Sri Lanka · Developed responsive web applications using Laravel and React, fixed website issues, supported office hardware/software and assisted with maintenance and basic server configuration.</p>
+            </div>
+            <div class="job">
+              <small>September 2021 — August 2024</small>
+              <h3>IT Support Specialist · NASS LOGISTICS</h3>
+              <p>Doha, Qatar · Provided onsite and remote L1/L2 support for 100+ end users, including OS deployment, workstation provisioning, Active Directory and Microsoft 365 onboarding/offboarding, VPN/RDP support, endpoint security and ConnectWise ITSM ticket management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">04 / Highlights</div><h2>IT support highlights</h2></div>
+          <p>Key areas from my support background that show practical experience across users, devices, systems and service operations.</p>
+        </div>
+        <div class="grid project-grid">
+          <article class="card project reveal">
+            <div class="num">01</div>
+            <h3>User Lifecycle & Access</h3>
+            <p>Managed onboarding and offboarding tasks including Active Directory and Microsoft 365 accounts, licenses, email setup, access provisioning and secure deprovisioning.</p>
+            <div class="chips"><span class="chip">Active Directory</span><span class="chip">Microsoft 365</span><span class="chip">Access Management</span></div>
+          </article>
+          <article class="card project reveal">
+            <div class="num">02</div>
+            <h3>Workstation & Incident Support</h3>
+            <p>Delivered L1/L2 support across hardware, software, operating systems, printers and network issues, including OS image deployment and standardized workstation builds.</p>
+            <div class="chips"><span class="chip">L1/L2</span><span class="chip">Windows</span><span class="chip">ITSM</span></div>
+          </article>
+          <article class="card project reveal">
+            <div class="num">03</div>
+            <h3>Infrastructure & Backup</h3>
+            <p>Supported Hyper-V and VMware ESXi environments, Synology NAS storage, Veeam Backup & Replication and Acronis Cyber Protect Cloud.</p>
+            <div class="chips"><span class="chip">Hyper-V</span><span class="chip">VMware ESXi</span><span class="chip">Veeam</span></div>
+          </article>
+          <article class="card project reveal">
+            <div class="num">04</div>
+            <h3>Security & Connectivity</h3>
+            <p>Assisted with SOPHOS firewall policies, endpoint protection, patch management, Aruba wireless infrastructure, VPN and general network troubleshooting.</p>
+            <div class="chips"><span class="chip">SOPHOS</span><span class="chip">Aruba</span><span class="chip">VPN</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">05 / Education</div><h2>Education & development</h2></div>
+          <p>Formal IT education supported by continued hands-on learning in systems, support, cloud services and web technologies.</p>
+        </div>
+        <div class="edu">
+          <div class="card reveal">
+            <div class="kicker">In Progress</div>
+            <h3>Bachelor of Information Technology</h3>
+            <p>Expected November 2026</p>
+          </div>
+          <div class="card reveal">
+            <div class="kicker">SLIATE</div>
+            <h3>Higher National Diploma in Information Technology</h3>
+            <p>Sri Lanka Institute of Advanced Technological Education</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">06 / Contact</div><h2>Available for IT opportunities.</h2></div>
+          <p>Immediate availability. Open to relocation or remote opportunities in IT support, desktop support, technical support and IT administration.</p>
+        </div>
+        <div class="contact">
+          <div class="card reveal">
+            <h3>Contact</h3>
+            <a class="linkrow" href="mailto:sajeelmhd22@gmail.com"><span>Email</span><strong>sajeelmhd22@gmail.com ↗</strong></a>
+            <a class="linkrow" target="_blank" href="https://www.linkedin.com/in/sajeelmhd22"><span>LinkedIn</span><strong>/in/sajeelmhd22 ↗</strong></a>
+          </div>
+          <div class="card reveal">
+            <h3>Profile details</h3>
+            <p>English — Fluent<br>Tamil — Native</p>
+            <div class="chips">
+              <span class="chip">Immediate Availability</span>
+              <span class="chip">Open to Relocate</span>
+              <span class="chip">Remote Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="year"></span> Sajeel Muhammed · Designed as a modern IT portfolio.</div></footer>
+
+  <script>
+    const words = ["L1 / L2 Support","Technical Support","Desktop Support","Microsoft 365","Active Directory","IT Administration"];
+    let wi=0, ci=0, deleting=false;
+    const el=document.getElementById("typing");
+    function type(){
+      const w=words[wi];
+      el.textContent=w.slice(0,ci);
+      if(!deleting && ci<w.length){ci++;setTimeout(type,70)}
+      else if(!deleting){deleting=true;setTimeout(type,1100)}
+      else if(ci>0){ci--;setTimeout(type,36)}
+      else{deleting=false;wi=(wi+1)%words.length;setTimeout(type,260)}
+    }
+    type();
+
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
+    },{threshold:.12});
+    document.querySelectorAll(".reveal").forEach(x=>obs.observe(x));
+
+    document.getElementById("year").textContent=new Date().getFullYear();
+
+    if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+      const tilt = document.querySelector(".portrait-tilt");
+      window.addEventListener("mousemove", e => {
+        const x = (e.clientX/window.innerWidth-.5)*10;
+        const y = (e.clientY/window.innerHeight-.5)*10;
+        tilt.style.transform = `translate3d(${x}px,${y}px,0)`;
+      }, {passive:true});
+    }
+    // ---------- Male voice intro ----------
+    // 1) Plays assets/intro.mp3 (a real male voice recording) -> same voice on every phone/browser.
+    // 2) If that file is missing, falls back to the browser's male voice (varies by device).
+    // Browsers block sound until the visitor taps once, so the "Enter Portfolio" screen shows first;
+    // if the browser DOES allow autoplay, the voice starts immediately and the screen disappears.
+    const gate = document.getElementById("voiceGate");
+    const gateBtn = document.getElementById("voiceGateBtn");
+    const audio = document.getElementById("introAudio");
+    const introText = "Hi, I'm Sajeel Muhammed. Welcome to my portfolio.";
+    let entered = false;
+
+    function openSite() {
+      if (entered) return;
+      entered = true;
+      gate.classList.add("hide");
+      document.body.classList.remove("locked");
+      setTimeout(() => gate.remove(), 800);
+    }
+
+    function pickMaleVoice() {
+      if (!("speechSynthesis" in window)) return null;
+      const voices = speechSynthesis.getVoices().filter(v => /^en([-_]|$)/i.test(v.lang || ""));
+      const female = /(zira|aria|jenny|samantha|susan|victoria|karen|moira|tessa|fiona|hazel|libby|sonia|female|woman)/i;
+      const preferred = ["Andrew","Guy","Christopher","Davis","Ryan","Brian","Google UK English Male","Daniel","Microsoft David","Microsoft Mark","Alex","Aaron","Fred","George"];
+      for (const n of preferred) {
+        const v = voices.find(v => v.name.toLowerCase().includes(n.toLowerCase()) && !female.test(v.name));
+        if (v) return v;
+      }
+      return voices.find(v => /(male|man|david|mark|james|paul)/i.test(v.name) && !female.test(v.name)) || null;
+    }
+
+    function speakFallback() {
+      return new Promise(resolve => {
+        if (!("speechSynthesis" in window)) return resolve(false);
+        const v = pickMaleVoice();
+        if (!v) return resolve(false);   // no male voice on this phone -> stay silent, never play a female voice
+        speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(introText);
+        u.lang = v.lang;
+        u.voice = v;
+        u.rate = 0.92;
+        u.onstart = () => resolve(true);
+        u.onerror = () => resolve(false);
+        speechSynthesis.speak(u);
+        setTimeout(() => resolve(false), 1500);
+      });
+    }
+
+    async function playIntro() {
+      try {
+        audio.currentTime = 0;
+        await audio.play();
+        return true;
+      } catch (err) {
+        return speakFallback();
+      }
+    }
+
+    // Try to autoplay right away (works only where the browser allows it, e.g. some desktops)
+    window.addEventListener("load", async () => {
+      try { await audio.play(); openSite(); } catch (_) { /* wait for tap */ }
+    });
+
+    gateBtn.addEventListener("click", async () => {
+      openSite();          // open instantly, no waiting
+      await playIntro();   // voice starts on the same tap
+    });
+
+    document.getElementById("voiceIntroBtn").addEventListener("click", e => {
+      e.preventDefault();
+      speechSynthesis && speechSynthesis.cancel();
+      playIntro();
+    });
+
+    if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = () => {};
+  </script>
+</body>
+</html>
